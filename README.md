@@ -13,26 +13,26 @@ The interface is designed to feel like a lightweight conversation rather than a 
 
 ## Current Status
 
-This is a **60% complete prototype** created as a proof of concept for a freelance project bid. The UI components are mostly complete and functional, but the backend integration is still in progress. Potential clients can experience the visual design and user flow directly in their browser.
+This is a **60% complete prototype** created as a proof of concept for a freelance project bid. The UI components are mostly complete and functional, and significant backend functionality has been implemented, including partial AI chatbot integration.
 
-The frontend (UI) is nearly complete and functional, while the backend services are partially implemented but not yet fully integrated.
+Potential clients can experience the visual design and user flow directly in their browser. The backend services are partially integrated but require further configuration for full functionality.
 
 ## Key Features Implemented
 
-### UI Components (Mostly Complete)
+### UI Components (Complete)
 - [x] Splash screen with fade animation
 - [x] Home screen with resort promotions
 - [x] Booking chat interface design
 - [x] Order history screen
 - [x] Notification system UI
-- [ ] Real-time house availability integration
-- [ ] Booking confirmation and data storage integration
 
-### Backend Components (Partially Implemented)
+### Backend Components (Partially Complete)
 - [x] Basic API structure with Go/Gin
 - [x] Database setup with SQLite
 - [x] Data models for houses and bookings
-- [ ] Full AI chatbot integration
+- [x] AI chatbot integration with OpenAI API
+- [x] Function calling for house listings
+- [x] Booking data processing and storage
 - [ ] Complete booking management API
 - [ ] Property management data integration
 
@@ -48,7 +48,7 @@ The frontend (UI) is nearly complete and functional, while the backend services 
 - Go 1.21
 - Gin Framework
 - SQLite database
-- OpenAI API integration (planned)
+- OpenAI API integration
 
 ## Project Structure
 
@@ -92,6 +92,7 @@ The frontend (UI) is nearly complete and functional, while the backend services 
 ### Prerequisites
 - Node.js (v14 or higher) for frontend development
 - Go (v1.21 or higher) for backend services
+- OpenAI API key for chatbot functionality (optional for demo)
 
 ### Frontend Installation
 
@@ -124,7 +125,12 @@ The frontend will be available at http://localhost:5173
    go mod tidy
    ```
 
-3. Start the server:
+3. (Optional) Create a `.env` file with your OpenAI API key:
+   ```bash
+   echo "OPENAI_API_KEY=your_openai_api_key_here" > .env
+   ```
+
+4. Start the server:
    ```bash
    go run main.go
    ```
@@ -189,38 +195,60 @@ PORT=8084 go run main.go
 - Message bubbles for user and bot
 - Input area with send button
 - Loading indicators
+- House selection interface
 
 ### Order History Screen
 - List of past bookings
 - Status indicators for each booking
 - Back navigation to home screen
 
-## Backend API Structure
+## Backend Functionality
 
-### Core Services
+### AI Chatbot Integration
+- OpenAI API integration for natural language processing
+- Structured conversation flow for booking process
+- Function calling for dynamic data retrieval
+- House listing based on guest count
+- Booking data extraction and validation
+
+### Data Management
+- SQLite database for persistent storage
+- House data management
+- Booking creation and retrieval
+- Customer information handling
+
+### API Endpoints
 - Resort/house management
 - Booking management
 - Chatbot AI integration
 - Database operations
 
-### Data Models
-- Houses/Resorts with availability
-- Bookings with status tracking
-- Customer information
+## Current Limitations
+
+### AI Chatbot
+- Requires OpenAI API key for full functionality
+- System prompt configured for specific conversation flow
+- Function calling implemented for house listings and booking data
+
+### Data Management
+- Sample data included for houses
+- Database schema defined but limited sample data
+- Booking validation in place but basic
 
 ## Future Development
 
 ### Backend Integration Completion
-- Complete AI chatbot functionality
-- Full database connectivity
-- Booking management system
+- Complete booking management API
 - Property management data integration
+- Enhanced error handling and validation
+- Additional AI conversation flows
 
 ### Additional Features
 - User authentication
 - Payment processing integration
 - Advanced search and filtering
 - Admin dashboard for property management
+- Multi-language support
 
 ## Contributing
 
@@ -236,6 +264,7 @@ This prototype was created by an entry-level developer as a proof of concept for
 - Ability to create mobile-responsive UI interfaces
 - Understanding of booking flow requirements for hospitality applications
 - Proficiency in modern frontend development technologies (React, Tailwind CSS, Vite)
-- Basic backend development skills (Go, Gin Framework)
+- Backend development skills (Go, Gin Framework, SQLite)
+- AI integration capabilities (OpenAI API)
 
-The 60% completion status shows commitment to proving capabilities rather than just submitting a proposal. The UI components are mostly complete and functional, allowing potential clients to experience the visual design and user flow.
+The 60% completion status shows commitment to proving capabilities rather than just submitting a proposal. The UI components are complete and functional, and significant backend functionality has been implemented, allowing potential clients to experience both the visual design and core functionality.
