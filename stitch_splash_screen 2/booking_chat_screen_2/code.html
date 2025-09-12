@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thai Resort Booking</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+    :root {
+      --primary-color: #38e07b;
+      --background-color: #122118;
+      --secondary-background-color: #1a3023;
+      --text-primary: #ffffff;
+      --text-secondary: #a3b3aa;
+      --accent-green: #96c5a9;
+    }
+    .chat-bubble {
+      @apply rounded-2xl px-4 py-3 max-w-[85%];
+    }
+    .bot-bubble {
+      @apply bg-[var(--secondary-background-color)] text-white chat-bubble rounded-bl-lg;
+    }
+    .user-bubble {
+      @apply bg-[var(--primary-color)] text-black chat-bubble rounded-br-lg;
+    }
+    .quick-reply {
+        @apply bg-[var(--secondary-background-color)] text-white rounded-full px-4 py-2 text-sm font-medium hover:bg-white/10;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[var(--background-color)]" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col justify-between overflow-x-hidden">
+<div class="flex-1 overflow-y-auto">
+<header class="sticky top-0 z-10 flex items-center bg-[var(--background-color)]/80 backdrop-blur-sm p-4 pb-3 justify-between border-b border-white/10">
+<button class="text-white flex size-10 items-center justify-center">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+</svg>
+</button>
+<h1 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Booking</h1>
+<div class="w-10"></div>
+</header>
+<main class="p-4 space-y-6">
+<div class="flex items-end gap-2.5">
+<img alt="Resort Bot Avatar" class="size-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAWNo3Kp6DHjNKaNF70FzsOee6jYWnO2CZC0d2sKK_FOA6lYPiZQCAyOCADVFCB2HZCquxaxn8TgNb7FkrAMAOSfVPiPm3ic8MMFGVUokmGqK7SfaOQszqy68t26RqqrHgVQMwHUBwQDlv3g3xpVYEa0VvT0nAZcESUJyMeWZ6ilrUohMRIDpw_BwtVzdIgapwjetvm-MqUk8BzQh7bzxINpBfwHzbvTp6qHXo5RgO3bul5eWbWBBV0aACIi7-gns2Xf6PMCu8xU_X"/>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-[var(--accent-green)] text-xs font-medium">Resort Bot</p>
+<p class="bot-bubble">When do you want to stay?</p>
+</div>
+</div>
+<div class="flex justify-end">
+<p class="user-bubble">5 February</p>
+</div>
+<div class="flex items-end gap-2.5">
+<img alt="Resort Bot Avatar" class="size-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUki16pS0Oef-n825lwodWDimtTJXiN7gMdVR0fXHlXyccG-3R0Cug10NENF-coR4-5YKSqmYYbpsQbQGm8I7DsFgBqEwf52qZ5HWTCHSksdWBz7ZsQ-fueRohUKMM0Kb2XFO31pDqU5vs5R5v3C3kr-UhPLyfIQ4SYVNFINz6tqcRPlzw4u1YjjkM5d7prGmGdK28VHvG6zVJtGXfMrNIBdWesVbAAFd9Hm-YGwxhuY5hoPElEDAbhbK_nvbO3epJqT4EiCPgWo56"/>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-[var(--accent-green)] text-xs font-medium">Resort Bot</p>
+<p class="bot-bubble">How many people?</p>
+</div>
+</div>
+<div class="flex justify-end">
+<p class="user-bubble">2 people</p>
+</div>
+<div class="flex items-end gap-2.5">
+<img alt="Resort Bot Avatar" class="size-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVisNasWT9Twn_iHkZ4MXmtdvHY5wBauiFkmrTCYaCcSJl9r1wtGFj00vEnK5hTGlOSx_tfk2CYWO5OpPug8n2AYN0YEpzms0xfhB6MDQT016RNN5veBrefNvT_3Q5hK3O5YVKyruHAN60qe9-SpIXM00y0Lof-PgHktt7XqXkyC5AEhcZirPWSpPYQvFuu46voPwkANKp26yzVflmGTf1-TsrirhpXrCnIL6rjZN84r4NYyqeN8QuA5rP85GXVU4SazHIK3Yxfn0H"/>
+<div class="flex flex-col gap-1 items-start w-full">
+<p class="text-[var(--accent-green)] text-xs font-medium">Resort Bot</p>
+<p class="bot-bubble">Which house types are available?</p>
+<div class="flex gap-2 overflow-x-auto pt-2 no-scrollbar w-full">
+<button class="flex items-center gap-3 bg-[var(--secondary-background-color)] rounded-xl p-2 pr-3 min-w-max">
+<img alt="Garden Cottage" class="size-10 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA023NConLhKFzJdUy6C2hyEw6Rac4FB7QJ7bDWnm2m6wYNJcqc8KQbgAlRSF8wcCVlK2pEYR2uB-raLu461BNjI25feuDPQvj5Fg9K1VAbY_s2rEX-Ar2UZyJEpaYy1_fWsEWy17WQHo0jEPFG69QB_DeHJhm-Q-w0PeMgNNkCcblJPOeIDWsOw2SBtR8akfvTSthF8vDkglAbmxR5ACtzVMn_1Z0C2TXYNQYuX5pnb7Tu8NIUKAKsoHQZd8pfCXlbBR2LyY1BzTU9"/>
+<span class="text-white text-sm font-medium">Garden Cottage</span>
+</button>
+<button class="flex items-center gap-3 bg-[var(--secondary-background-color)] rounded-xl p-2 pr-3 min-w-max">
+<img alt="Pool Villa" class="size-10 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwVJZ9oHepePEs6VO1LJVMgYp1ySzJn5di9FVPFTl20ZXuw5DIUzM0AvJd6VOtSsDlHC-3KBdRexLWfzGIPdBiY473DD90R-45hC1439Tp603iENIZIGjGh5oIwbYXQTUEdoqI9Zu0ff1nb4aIWmGVrleaCjLpxJAseQxhuH8bRVa9pkKNiFg2rRznqCE3huqM-GsAaP445PgmGIus7o4nUr5gxehxaIKlJ-MmIVyxyBp8DdYL6G_KOkcyaNrjhhi6UlBjYyE7e55H"/>
+<span class="text-white text-sm font-medium">Pool Villa</span>
+</button>
+<button class="flex items-center gap-3 bg-[var(--secondary-background-color)] rounded-xl p-2 pr-3 min-w-max">
+<img alt="City Apartment" class="size-10 rounded-lg object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq_pva7LDlYBJWMp20GtsTHUBBVsNKd4HVYXnDHgHQUSTXMLLRac0f73BOzPRmjlPfeaM6lRinMShu2XeSAqEAP8Y8ubVlRtJ0tQRfJT0v_FuZjqmrfcUmC84Lf6Hkn4Ah1PdGdzeEwu0W5QvWNhtuJb-r-hP8XJ59RVC5kS7SUYzQo2Z6AP2hB8DVE0fkK8U1rBwToSrv2tOBpUpimUHqEFwyrwG9UwnJ02OISefQ9QI2y8j6ZQIKJtW0Cp1G7DD-PXvD_1_N18AW"/>
+<span class="text-white text-sm font-medium">City Apartment</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex justify-end">
+<p class="user-bubble">Pool Villa, please.</p>
+</div>
+<div class="flex items-end gap-2.5">
+<img alt="Resort Bot Avatar" class="size-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA69TcMQRqqsPpJWxsKoyVJIvlbeuwjk3na2CqzMWK8yNwTbaJRvhnahkGmWyS1HHWXc_ggL-jq5hDZqUU7jE0r_kvUryvr1YLvQe2E8jBgFyCalOcLo2rn7Boo0UjC_WT9QQRyx46bWQSAJ94rzE-6zt8H0g531P2_IbkY2wyZ2CjXXCSRgilQDXeB-IbVvXNeQzsXSg5j_kJrvA5zcf9Oyr_pZHAv78gEdf_B-zNcp-DhVQq4SgF48HF2jvCi8OavK2Y6kIV29H6"/>
+<div class="flex flex-col gap-2 items-start w-full">
+<p class="text-[var(--accent-green)] text-xs font-medium">Resort Bot</p>
+<div class="bot-bubble w-full">
+<p class="mb-3">Great! Here is a summary of your booking:</p>
+<div class="space-y-2 text-sm">
+<div class="flex items-center gap-3">
+<span class="text-[var(--text-secondary)] w-20">Date:</span>
+<span class="text-white font-medium">February 5th</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[var(--text-secondary)] w-20">Guests:</span>
+<span class="text-white font-medium">2 people</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-[var(--text-secondary)] w-20">House Type:</span>
+<span class="text-white font-medium">Pool Villa</span>
+</div>
+</div>
+</div>
+<div class="flex gap-2 justify-start w-full pt-1">
+<button class="quick-reply">Confirm</button>
+<button class="quick-reply">Cancel</button>
+</div>
+</div>
+</div>
+<div class="flex items-end gap-2.5">
+<img alt="Resort Bot Avatar" class="size-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgsoQBwlSwwWnCLC8_O85mnRID0Lta5rzNZhKptQuZnDfJud1WmD3TYQjpqwwj23z5AOYAwm5JwxyoGpnQqz1SLQ9WbKO1oOZVCS38aFWw-708P0YAsAJTQdlEMrityeO6NdBgQ0wcvU8MC8fYhPd0cjQd0UucYo_aT88dNFm_uqszlFmI-dcGPUOy83ZSj8edl1A8i7k_6YCa-ZcO4XwHlv8Kxez-NyVar2qzd-t0qOEGZlE33qyF_g6cXuQB9jbnyCe7KJyEhPB9"/>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-[var(--accent-green)] text-xs font-medium">Resort Bot</p>
+<p class="bot-bubble">Got it. Just a couple more details. What's your full name and phone number?</p>
+</div>
+</div>
+<div class="flex justify-end">
+<p class="user-bubble">Jane Doe, (555) 123-4567</p>
+</div>
+<div class="flex items-end gap-2.5">
+<img alt="Resort Bot Avatar" class="size-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgsoQBwlSwwWnCLC8_O85mnRID0Lta5rzNZhKptQuZnDfJud1WmD3TYQjpqwwj23z5AOYAwm5JwxyoGpnQqz1SLQ9WbKO1oOZVCS38aFWw-708P0YAsAJTQdlEMrityeO6NdBgQ0wcvU8MC8fYhPd0cjQd0UucYo_aT88dNFm_uqszlFmI-dcGPUOy83ZSj8edl1A8i7k_6YCa-ZcO4XwHlv8Kxez-NyVar2qzd-t0qOEGZlE33qyF_g6cXuQB9jbnyCe7KJyEhPB9"/>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-[var(--accent-green)] text-xs font-medium">Resort Bot</p>
+<p class="bot-bubble">Thank you, Jane! Your booking is now pending confirmation from our receptionist. We'll contact you shortly about the payment.</p>
+</div>
+</div>
+</main>
+</div>
+<footer class="sticky bottom-0 bg-[var(--background-color)]/80 backdrop-blur-sm pt-3 pb-4 px-4 border-t border-white/10">
+<div class="flex items-center gap-3">
+<input class="flex-1 bg-[var(--secondary-background-color)] text-white placeholder:text-[var(--text-secondary)] rounded-full h-12 px-5 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]" placeholder="Type a message..." type="text"/>
+<button class="bg-[var(--primary-color)] text-black size-12 rounded-full flex items-center justify-center shrink-0">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"></path>
+</svg>
+</button>
+</div>
+</footer>
+</div>
+
+</body></html>

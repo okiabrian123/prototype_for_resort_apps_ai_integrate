@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "name": "Garden Cottage",
+    "description": "Cozy cottage surrounded by tropical gardens with stunning ocean views",
+    "location": "Tropical Paradise Resort, Bali, Indonesia",
+    "rating": 4.8,
+    "price_per_night": 150.00,
+    "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2940&auto=format&fit=crop",
+    "amenities": [
+      "Private Garden",
+      "Ocean View",
+      "Spa Services",
+      "Restaurant",
+      "Wi-Fi"
+    ],
+    "guests": 2
+  },
+  {
+    "id": 2,
+    "name": "Pool Villa",
+    "description": "Luxurious villa with private pool and direct beach access",
+    "location": "Tropical Paradise Resort, Bali, Indonesia",
+    "rating": 4.9,
+    "price_per_night": 300.00,
+    "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2940&auto=format&fit=crop",
+    "amenities": [
+      "Private Pool",
+      "Beach Access",
+      "Ocean View",
+      "Spa Services",
+      "Restaurant",
+      "Wi-Fi"
+    ],
+    "guests": 4
+  },
+  {
+    "id": 3,
+    "name": "Beach House",
+    "description": "Spacious beachfront house perfect for families and large groups",
+    "location": "Tropical Paradise Resort, Bali, Indonesia",
+    "rating": 4.7,
+    "price_per_night": 450.00,
+    "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2940&auto=format&fit=crop",
+    "amenities": [
+      "Beach Front",
+      "Multiple Bedrooms",
+      "Kitchen",
+      "Private Beach",
+      "Spa Services",
+      "Restaurant",
+      "Wi-Fi"
+    ],
+    "guests": 6
+  },
+  {
+    "id": 4,
+    "name": "Mountain Cabin",
+    "description": "Charming cabin with mountain views and cozy fireplace",
+    "location": "Mountain Retreat, Swiss Alps, Switzerland",
+    "rating": 4.6,
+    "price_per_night": 120.00,
+    "image_url": "https://images.unsplash.com/photo-1502673530728-f79b3ed38981?q=80&w=2950&auto=format&fit=crop",
+    "amenities": [
+      "Mountain View",
+      "Fireplace",
+      "Hot Tub",
+      "Hiking Trails",
+      "Restaurant",
+      "Wi-Fi"
+    ],
+    "guests": 2
+  },
+  {
+    "id": 5,
+    "name": "Log Cabin",
+    "description": "Spacious log cabin perfect for families with mountain views",
+    "location": "Mountain Retreat, Swiss Alps, Switzerland",
+    "rating": 4.7,
+    "price_per_night": 250.00,
+    "image_url": "https://images.unsplash.com/photo-1502673530728-f79b3ed38981?q=80&w=2950&auto=format&fit=crop",
+    "amenities": [
+      "Mountain View",
+      "Multiple Bedrooms",
+      "Fireplace",
+      "Hot Tub",
+      "Hiking Trails",
+      "Restaurant",
+      "Wi-Fi"
+    ],
+    "guests": 4
+  },
+  {
+    "id": 6,
+    "name": "Luxury Lodge",
+    "description": "Luxurious lodge with premium amenities and breathtaking mountain views",
+    "location": "Mountain Retreat, Swiss Alps, Switzerland",
+    "rating": 4.8,
+    "price_per_night": 500.00,
+    "image_url": "https://images.unsplash.com/photo-1502673530728-f79b3ed38981?q=80&w=2950&auto=format&fit=crop",
+    "amenities": [
+      "Mountain View",
+      "Multiple Bedrooms",
+      "Spa Services",
+      "Fireplace",
+      "Hot Tub",
+      "Hiking Trails",
+      "Restaurant",
+      "Wi-Fi"
+    ],
+    "guests": 8
+  },
+  {
+    "id": 7,
+    "name": "City Apartment",
+    "description": "Modern apartment in the heart of the city with urban luxury",
+    "location": "Urban Luxury Complex, New York, USA",
+    "rating": 4.7,
+    "price_per_night": 200.00,
+    "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2950&auto=format&fit=crop",
+    "amenities": [
+      "City View",
+      "Modern Kitchen",
+      "Wi-Fi",
+      "Concierge",
+      "Valet Parking"
+    ],
+    "guests": 2
+  },
+  {
+    "id": 8,
+    "name": "Penthouse Suite",
+    "description": "Luxurious penthouse suite with panoramic city views",
+    "location": "Urban Luxury Complex, New York, USA",
+    "rating": 4.9,
+    "price_per_night": 400.00,
+    "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2950&auto=format&fit=crop",
+    "amenities": [
+      "Panoramic City View",
+      "Rooftop Access",
+      "Spa Services",
+      "Concierge",
+      "Valet Parking",
+      "Room Service"
+    ],
+    "guests": 4
+  },
+  {
+    "id": 9,
+    "name": "Executive Loft",
+    "description": "Spacious loft perfect for business travelers or families",
+    "location": "Urban Luxury Complex, New York, USA",
+    "rating": 4.8,
+    "price_per_night": 600.00,
+    "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2950&auto=format&fit=crop",
+    "amenities": [
+      "City View",
+      "Multiple Floors",
+      "Business Center",
+      "Spa Services",
+      "Concierge",
+      "Valet Parking",
+      "Room Service"
+    ],
+    "guests": 6
+  }
+]

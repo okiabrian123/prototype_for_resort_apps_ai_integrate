@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+background-color: rgb(133, 133, 133);
+display: flex;
+justify-content: center;
+}
+
+body {
+  min-height: max(884px, 100dvh);
+}
+.mobile-apps {
+  width: 412px;
+  position: relative;
+}

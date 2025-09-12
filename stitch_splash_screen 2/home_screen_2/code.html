@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thai Resort Booking</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+:root {
+--primary-50: #effaf5;
+--primary-100: #dff6eb;
+--primary-200: #bdebd7;
+--primary-300: #98e0c3;
+--primary-400: #5dc99d;
+--primary-500: #38b280;
+--primary-600: #298d68;
+--primary-700: #227154;
+--primary-800: #1f5b46;
+--primary-900: #1b4b3b;
+--primary-950: #0d281f;
+}
+.bg-image {
+background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+background-size: cover;
+background-position: center;
+}
+</style>
+<style>
+body {
+min-height: max(884px, 100dvh);
+}
+</style>
+<style>
+body {
+min-height: max(884px, 100dvh);
+}
+</style>
+</head>
+<body class="bg-gray-100" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="h-80 w-full bg-image">
+<div class="bg-black/20 h-full w-full p-6 flex flex-col justify-between">
+<div class="flex items-center justify-end">
+<button class="relative flex items-center justify-center rounded-full h-12 w-12 text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-3xl">
+notifications
+</span>
+<span class="absolute top-2 right-2 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+</span>
+</button>
+</div>
+<div class="text-white">
+<h1 class="text-3xl font-bold tracking-tight">Hi, selamat datang</h1>
+<p class="text-white/80 mt-1">Ready to book your next getaway?</p>
+</div>
+</div>
+</div>
+<main class="flex-1 bg-gray-50 rounded-t-3xl -mt-8 p-6">
+<div class="grid grid-cols-2 gap-4">
+<a class="group flex flex-col items-center justify-center rounded-2xl bg-white p-6 aspect-square shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-primary-100 text-primary-600 mb-4 transition-transform duration-300 group-hover:scale-110">
+<span class="material-symbols-outlined text-4xl">
+add_shopping_cart
+</span>
+</div>
+<h2 class="text-lg font-semibold text-gray-800 text-center">Order</h2>
+<p class="text-sm text-gray-500 text-center mt-1">Start a new booking</p>
+</a>
+<a class="group flex flex-col items-center justify-center rounded-2xl bg-white p-6 aspect-square shadow-sm hover:shadow-lg transition-shadow duration-300" href="#">
+<div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-200 text-gray-600 mb-4 transition-transform duration-300 group-hover:scale-110">
+<span class="material-symbols-outlined text-4xl">
+history
+</span>
+</div>
+<h2 class="text-lg font-semibold text-gray-800 text-center">Order History</h2>
+<p class="text-sm text-gray-500 text-center mt-1">View past bookings</p>
+</a>
+</div>
+<div class="mt-8">
+<h3 class="text-xl font-bold text-gray-800 mb-4">Promotions</h3>
+<div class="space-y-4">
+<div class="bg-white p-4 rounded-xl shadow-sm flex items-center gap-4">
+<img alt="Resort Promotion" class="w-24 h-24 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS4ql2j4PrEv_CaidmPRWDoiZblANj5J0O3Q22f2wcz_AVtmWXZQA_QJuxrjmmIJ4czvbNGgT1kiTmUQTmCbodgCzljqQdn_tCHBl2a6HsIM6hlFxgcJuMksFC7IdAj_HorVj2ypHs6Na0wcfudvEhyxeFLnJLI5x5EFED3MuIKNF3y69OWKxJdOWa2KG0IM4CxDcahxXUomNNZeysJTeR7sivRE1MQRQCw6U1eVXeU4jcO78D0DtVXjTT4G-Ras0FBrHZiJS2z083"/>
+<div>
+<h4 class="font-semibold text-gray-800">30% Off Your Next Stay</h4>
+<p class="text-sm text-gray-600 mt-1">Book before the end of the month to get a discount.</p>
+<button class="text-sm font-semibold text-primary-600 mt-2 hover:underline">Book now</button>
+</div>
+</div>
+<div class="bg-white p-4 rounded-xl shadow-sm flex items-center gap-4">
+<img alt="Resort Promotion" class="w-24 h-24 object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzKKdMppUOj7P538YXim3Jql9fpQVcIRs0Vd_apIykJO5Baxt9RtwhZ7Q_lkK9RPXBZydvRdu2mNGt-EuUHG98D2g9KvRu2J-8je0DuBg1senHRzeAH0tNg5j6dgL6tdaNYGZVAgROzplb6Did2c1WvipCWIJ9CztldHoV6-MFE4ZSaP77VuAmsUGb6g1LieElexB4pkOb_ZwwmjO1BeNIDrx06iA4hlaBGyD3b0l35irwG28ri8ntu1hSVw0BMd1Bw184cWhcFW2I"/>
+<div>
+<h4 class="font-semibold text-gray-800">Free Spa Treatment</h4>
+<p class="text-sm text-gray-600 mt-1">Enjoy a complimentary spa session with any 3-night stay.</p>
+<button class="text-sm font-semibold text-primary-600 mt-2 hover:underline">Learn more</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
