@@ -1,5 +1,5 @@
 # Resort Chat Booking Application
-
+https://prototype-resort-apps.okiabrian.my.id/
 A prototype for a mobile chat-based booking application for resorts, featuring natural language processing and a conversational UI.
 
 ## Project Overview
