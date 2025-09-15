@@ -11,10 +11,14 @@ import (
 )
 
 func main() {
-	// Load environment variables
-	err := godotenv.Load()
+	// Load environment variables from root .env file
+	err := godotenv.Load("../.env")
 	if err != nil {
-		log.Println("No .env file found")
+		// Try to load from current directory as fallback
+		err = godotenv.Load(".env")
+		if err != nil {
+			log.Println("No .env file found, using default settings")
+		}
 	}
 
 	// Initialize database
@@ -32,12 +36,38 @@ func main() {
 	// Create Gin router
 	router := gin.Default()
 
-	// Add CORS middleware
+	// Zero Trust Security: Configure CORS with strict policies
+	allowedOrigin := os.Getenv("ALLOWED_ORIGINS")
+	if allowedOrigin == "" {
+		allowedOrigin = "https://okiabrian.my.id"
+	}
+
+	// Add security headers middleware
 	router.Use(func(c *gin.Context) {
-		c.Header("Access-Control-Allow-Origin", "*")
-		c.Header("Access-Control-Allow-Credentials", "true")
-		c.Header("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
-		c.Header("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT, DELETE")
+		// Zero Trust Security: Set security headers
+		c.Header("X-Content-Type-Options", "nosniff")
+		c.Header("X-Frame-Options", "DENY")
+		c.Header("X-XSS-Protection", "1; mode=block")
+		c.Header("Strict-Transport-Security", "max-age=31536000; includeSubDomains")
+		c.Header("Content-Security-Policy", "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'")
+
+		// Configure CORS with strict policies for Zero Trust
+		// Allow both the production domain and localhost for development
+		origin := c.Request.Header.Get("Origin")
+		if origin == "http://localhost:8085" {
+			c.Header("Access-Control-Allow-Origin", "http://localhost:8085")
+		} else if origin == "" {
+			// For requests without Origin header, use the configured allowed origin
+			c.Header("Access-Control-Allow-Origin", allowedOrigin)
+		} else {
+			// For other origins, check if they match the allowed origin
+			c.Header("Access-Control-Allow-Origin", allowedOrigin)
+		}
+
+		c.Header("Access-Control-Allow-Credentials", "false")
+		c.Header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+		c.Header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE")
+		c.Header("Access-Control-Max-Age", "86400") // 24 hours
 
 		if c.Request.Method == "OPTIONS" {
 			c.AbortWithStatus(204)
@@ -96,5 +126,6 @@ func main() {
 	}
 
 	log.Printf("Server starting on port %s", port)
+	log.Printf("Allowed CORS origin: %s", allowedOrigin)
 	router.Run(":" + port)
 }

@@ -55,7 +55,8 @@ Potential clients can experience both the visual design and core functionality d
 
 ```
 .
-├── resort-apps/                 # Frontend React application
+├── .env                     # Environment configuration (moved from server/.env)
+├── resort-apps/             # Frontend React application
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── SplashScreen.jsx
@@ -70,7 +71,7 @@ Potential clients can experience both the visual design and core functionality d
 │   ├── vite.config.js
 │   └── tailwind.config.js
 │
-└── server/                      # Backend Go application
+└── server/                  # Backend Go application
     ├── data/
     │   └── houses.json
     ├── database/
@@ -94,6 +95,21 @@ Potential clients can experience both the visual design and core functionality d
 - Node.js (v14 or higher) for frontend development
 - Go (v1.21 or higher) for backend services
 - OpenAI API key for chatbot functionality (optional for demo)
+
+### Environment Configuration
+
+All environment variables are now managed in a single `.env` file in the root directory:
+
+```bash
+# Create the environment file from example
+cp .env.example .env
+```
+
+Key environment variables:
+- `DOMAIN_NAME`: The domain name for Cloudflare tunnel access
+- `PORT`: Backend server port (default: 8084)
+- `FRONTEND_PORT`: Frontend development server port (default: 5173)
+- `ALLOWED_ORIGINS`: CORS allowed origins for security
 
 ### Frontend Installation
 
@@ -126,12 +142,7 @@ The frontend will be available at http://localhost:5173
    go mod tidy
    ```
 
-3. (Optional) Create a `.env` file with your OpenAI API key:
-   ```bash
-   echo "OPENAI_API_KEY=your_openai_api_key_here" > .env
-   ```
-
-4. Start the server:
+3. Start the server:
    ```bash
    go run main.go
    ```

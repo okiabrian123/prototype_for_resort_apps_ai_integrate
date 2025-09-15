@@ -115,7 +115,7 @@ func ProcessHouseListData(houseListData *HouseListData) (interface{}, error) {
 		return map[string]interface{}{
 			"type":    "house_options",
 			"houses":  string(houseOptionsJSON),
-			"message": "Please select one of these houses2:",
+			"message": "Please select one of these houses:",
 		}, nil
 	} else {
 		houseOptions := "I'm sorry, but we don't have any houses available for " +

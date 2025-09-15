@@ -15,9 +15,13 @@ var DB *sql.DB
 // InitDB initializes the SQLite database
 func InitDB() {
 	// Load environment variables
-	err := godotenv.Load()
+	err := godotenv.Load("../.env")
 	if err != nil {
-		log.Println("No .env file found, using default settings")
+		// Try to load from current directory as fallback
+		err = godotenv.Load(".env")
+		if err != nil {
+			log.Println("No .env file found, using default settings")
+		}
 	}
 
 	// Create data directory if it doesn't exist
@@ -56,26 +60,14 @@ func createTables() {
 		total_price REAL NOT NULL,
 		status TEXT NOT NULL DEFAULT 'pending', -- pending, confirmed, paid, cancelled
 		payment_date DATE,
+		customer_name TEXT,
+		phone_number TEXT,
 		created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 	);`
 
 	_, err := DB.Exec(bookingsTable)
 	if err != nil {
 		log.Fatal("Failed to create bookings table:", err)
-	}
-
-	// Add customer_name column if it doesn't exist
-	_, err = DB.Exec("ALTER TABLE bookings ADD COLUMN customer_name TEXT")
-	if err != nil {
-		// Column might already exist, ignore error
-		log.Println("customer_name column already exists or error adding it:", err)
-	}
-
-	// Add phone_number column if it doesn't exist
-	_, err = DB.Exec("ALTER TABLE bookings ADD COLUMN phone_number TEXT")
-	if err != nil {
-		// Column might already exist, ignore error
-		log.Println("phone_number column already exists or error adding it:", err)
 	}
 
 	log.Println("Database tables created successfully")

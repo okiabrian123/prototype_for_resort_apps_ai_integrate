@@ -1,0 +1,29 @@
+# Crontab for Resort Chat Booking Application
+# This file contains scheduled tasks for maintaining the application
+
+# Example cron job format:
+# .---------------- minute (0 - 59)
+# | .------------- hour (0 - 23)
+# | | .---------- day of month (1 - 31)
+# | | | .------- month (1 - 12) OR jan,feb,mar,apr ...
+# | | | | .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# | | | | |
+# * * * * * command to be executed
+
+# Daily database backup at 2:00 AM
+0 2 * * * /root/prototype_for_resort_apps_ai_integrate/scripts/backup-db.sh
+
+# Weekly log rotation at 3:00 AM on Sundays
+0 3 * * 0 /root/prototype_for_resort_apps_ai_integrate/scripts/rotate-logs.sh
+
+# Daily cleanup of old temporary files at 1:00 AM
+0 1 * * * find /tmp -name "resort-app-*" -mtime +7 -delete
+
+# Health check every 10 minutes during business hours (8 AM to 8 PM)
+*/10 8-20 * * * /root/prototype_for_resort_apps_ai_integrate/scripts/health-check.sh
+
+# Send daily booking summary report at 9:00 PM
+0 21 * * * /root/prototype_for_resort_apps_ai_integrate/scripts/daily-report.sh
+
+# Monthly cleanup of old booking records (first day of month at midnight)
+0 0 1 * * /root/prototype_for_resort_apps_ai_integrate/scripts/cleanup-old-bookings.sh

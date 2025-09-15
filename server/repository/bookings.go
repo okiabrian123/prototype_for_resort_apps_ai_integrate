@@ -18,10 +18,18 @@ func GetAllBookings() ([]models.Booking, error) {
 	var bookings []models.Booking
 	for rows.Next() {
 		var booking models.Booking
-		err := rows.Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &booking.CustomerName, &booking.PhoneNumber, &booking.CreatedAt)
+		var customerName, phoneNumber sql.NullString
+		err := rows.Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &customerName, &phoneNumber, &booking.CreatedAt)
 		if err != nil {
 			log.Println("Error scanning booking row:", err)
 			continue
+		}
+		// Handle NULL values
+		if customerName.Valid {
+			booking.CustomerName = customerName.String
+		}
+		if phoneNumber.Valid {
+			booking.PhoneNumber = phoneNumber.String
 		}
 		bookings = append(bookings, booking)
 	}
@@ -32,14 +40,23 @@ func GetAllBookings() ([]models.Booking, error) {
 // GetBookingByID retrieves a booking by its ID
 func GetBookingByID(id int) (*models.Booking, error) {
 	var booking models.Booking
+	var customerName, phoneNumber sql.NullString
 	err := database.DB.QueryRow("SELECT id, user_id, resort_name, check_in, check_out, guests, total_price, status, payment_date, customer_name, phone_number, created_at FROM bookings WHERE id = ?", id).
-		Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &booking.CustomerName, &booking.PhoneNumber, &booking.CreatedAt)
+		Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &customerName, &phoneNumber, &booking.CreatedAt)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return nil, nil
 		}
 		return nil, err
+	}
+
+	// Handle NULL values
+	if customerName.Valid {
+		booking.CustomerName = customerName.String
+	}
+	if phoneNumber.Valid {
+		booking.PhoneNumber = phoneNumber.String
 	}
 
 	return &booking, nil
@@ -90,10 +107,18 @@ func GetBookingsByStatus(status string) ([]models.Booking, error) {
 	var bookings []models.Booking
 	for rows.Next() {
 		var booking models.Booking
-		err := rows.Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &booking.CustomerName, &booking.PhoneNumber, &booking.CreatedAt)
+		var customerName, phoneNumber sql.NullString
+		err := rows.Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &customerName, &phoneNumber, &booking.CreatedAt)
 		if err != nil {
 			log.Println("Error scanning booking row:", err)
 			continue
+		}
+		// Handle NULL values
+		if customerName.Valid {
+			booking.CustomerName = customerName.String
+		}
+		if phoneNumber.Valid {
+			booking.PhoneNumber = phoneNumber.String
 		}
 		bookings = append(bookings, booking)
 	}
@@ -112,10 +137,18 @@ func GetBookingsByUserID(userID int) ([]models.Booking, error) {
 	var bookings []models.Booking
 	for rows.Next() {
 		var booking models.Booking
-		err := rows.Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &booking.CustomerName, &booking.PhoneNumber, &booking.CreatedAt)
+		var customerName, phoneNumber sql.NullString
+		err := rows.Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &customerName, &phoneNumber, &booking.CreatedAt)
 		if err != nil {
 			log.Println("Error scanning booking row:", err)
 			continue
+		}
+		// Handle NULL values
+		if customerName.Valid {
+			booking.CustomerName = customerName.String
+		}
+		if phoneNumber.Valid {
+			booking.PhoneNumber = phoneNumber.String
 		}
 		bookings = append(bookings, booking)
 	}
@@ -135,10 +168,18 @@ func GetBookingsByCustomerInfo(name, phone string) ([]models.Booking, error) {
 	var bookings []models.Booking
 	for rows.Next() {
 		var booking models.Booking
-		err := rows.Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &booking.CustomerName, &booking.PhoneNumber, &booking.CreatedAt)
+		var customerName, phoneNumber sql.NullString
+		err := rows.Scan(&booking.ID, &booking.UserID, &booking.ResortName, &booking.CheckIn, &booking.CheckOut, &booking.Guests, &booking.TotalPrice, &booking.Status, &booking.PaymentDate, &customerName, &phoneNumber, &booking.CreatedAt)
 		if err != nil {
 			log.Println("Error scanning booking row:", err)
 			continue
+		}
+		// Handle NULL values
+		if customerName.Valid {
+			booking.CustomerName = customerName.String
+		}
+		if phoneNumber.Valid {
+			booking.PhoneNumber = phoneNumber.String
 		}
 		bookings = append(bookings, booking)
 	}

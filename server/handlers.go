@@ -319,12 +319,15 @@ Step 3: House Type Selection
 - Move to Step 4
 
 Step 4: Booking Summary
-- Display a summary with the format:
-  "Great! Here is a summary of your booking:
-  
-  Date: [confirmed actual date]
-  Guests: [number] people
-  House Type: [selected house type]"
+- Display a summary using JSON format with the following structure:
+  <[BOOKING_SUMMARY]>
+  {
+    "date": "[confirmed actual date]",
+    "guests": [number],
+    "houseType": "[selected house type]"
+  }
+  </[BOOKING_SUMMARY]>
+- The system will automatically display a formal booking summary based on this JSON data
 - Ask user to "Confirm" or "Cancel"
 - If Cancel: restart from Step 1
 - If Confirm: move to Step 5
